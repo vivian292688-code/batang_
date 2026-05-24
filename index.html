@@ -259,82 +259,41 @@
 <section id="attractions">
   <div class="section-title">
     <h2>景點導覽｜Attractions</h2>
-    <p>點擊左側景點卡片，右側地圖會自動移動到對應位置</p>
+    <p>點擊左側分類卡片，右側地圖會一次顯示該分類所有地標</p>
   </div>
 
   <div class="storymap">
     <div class="story-list">
 
-      <div class="story-card active" data-lat="23.984396545409314" data-lng="120.55957403768117" data-zoom="16">
+      <div class="story-card active" data-category="beliefs">
         <span class="tag">Beliefs & Stories</span>
-        <h3>信仰與故事①｜Beliefs & Stories</h3>
-        <p>廟埕、香火與節慶，陪伴著居民走過農忙歲月，也保存著地方最真實的人情與故事。</p>
+        <h3>信仰與故事｜Beliefs & Stories</h3>
+        <p>廟埕、香火與節慶，保存著地方最真實的人情與故事。</p>
       </div>
 
-      <div class="story-card" data-lat="23.98756251199652" data-lng="120.5577258837089" data-zoom="16">
-        <span class="tag">Beliefs & Stories</span>
-        <h3>信仰與故事②｜Beliefs & Stories</h3>
-        <p>地方信仰空間不只是祭拜場所，也是居民交流、凝聚情感與延續文化的重要核心。</p>
-      </div>
-
-      <div class="story-card" data-lat="23.974853761810476" data-lng="120.56559629535225" data-zoom="16">
-        <span class="tag">Beliefs & Stories</span>
-        <h3>信仰與故事③｜Beliefs & Stories</h3>
-        <p>透過廟宇與地方故事，可以看見擺塘村居民與土地之間長久累積的生活記憶。</p>
-      </div>
-
-      <div class="story-card" data-lat="23.987936624836724" data-lng="120.55707128001008" data-zoom="16">
-        <span class="tag">Beliefs & Stories</span>
-        <h3>信仰與故事④｜Beliefs & Stories</h3>
-        <p>信仰承載地方文化，也讓遊客能從故事中理解擺塘村的日常與人情。</p>
-      </div>
-
-      <div class="story-card" data-lat="23.985737533116836" data-lng="120.55667866651686" data-zoom="16">
+      <div class="story-card" data-category="grape">
         <span class="tag">Rural Landscape</span>
-        <h3>葡萄園景觀①｜Grape Vineyard</h3>
+        <h3>葡萄園景觀｜Grape Vineyard</h3>
         <p>走進葡萄園與田園小徑，感受擺塘村農業景觀與鄉村日常風貌。</p>
       </div>
 
-      <div class="story-card" data-lat="23.984885632162012" data-lng="120.55365999535238" data-zoom="16">
-        <span class="tag">Rural Landscape</span>
-        <h3>葡萄園景觀②｜Grape Vineyard</h3>
-        <p>葡萄園展現擺塘村的產業特色，也呈現農村與土地共生的生活樣貌。</p>
-      </div>
-
-      <div class="story-card" data-lat="23.985678718912066" data-lng="120.55667866651686" data-zoom="16">
-        <span class="tag">Rural Landscape</span>
-        <h3>葡萄園景觀③｜Grape Vineyard</h3>
-        <p>沿著農路漫步，可以看見葡萄產業與鄉村風景交織出的地方特色。</p>
-      </div>
-
-      <div class="story-card" data-lat="23.98640409222695" data-lng="120.55578817315883" data-zoom="16">
-        <span class="tag">Rural Landscape</span>
-        <h3>葡萄園景觀④｜Grape Vineyard</h3>
-        <p>此處適合觀察農村景觀、拍攝田園風光，感受擺塘村慢活氛圍。</p>
-      </div>
-
-      <div class="story-card" data-lat="23.983315621971478" data-lng="120.55375008000988" data-zoom="16">
-        <span class="tag">Rural Landscape</span>
-        <h3>葡萄園景觀⑤｜Grape Vineyard</h3>
-        <p>葡萄園景觀不只是農業生產空間，也是擺塘村重要的地方風景記憶。</p>
-      </div>
-
-      <div class="story-card" data-lat="23.98090645809134" data-lng="120.55779548000973" data-zoom="16">
-        <span class="tag">Rural Landscape</span>
-        <h3>葡萄園景觀⑥｜Grape Vineyard</h3>
-        <p>透過葡萄園與田園景觀，遊客能更貼近擺塘村的農村生活與產業文化。</p>
-      </div>
-
-      <div class="story-card" data-lat="23.984396545409314" data-lng="120.55957403768117" data-zoom="16">
+      <div class="story-card" data-category="farm">
         <span class="tag">Farm Experience</span>
         <h3>農遊體驗｜Farm Experience</h3>
-        <p>結合葡萄產業、農產品特產與地方體驗活動，讓遊客認識農村產業文化。</p>
+        <p>結合葡萄產業、農產品特產與地方體驗活動，認識農村產業文化。</p>
       </div>
 
     </div>
 
     <div id="map"></div>
   </div>
+</section>
+
+    </div>
+
+    <div id="map"></div>
+  </div>
+  
 </section>
 
 <section id="route">
@@ -375,39 +334,68 @@ Google 地圖導航
   ===================================================== -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    // 教學：這裡是地圖一開始顯示的位置。
-    // [23.9600, 120.5700] 是預設中心點座標，15 是地圖縮放程度。
-    const map = L.map('map').setView([23.985472655233988, 120.55972260884549], 15);
+  <script>
+  const map = L.map('map').setView([23.985472655233988, 120.55972260884549], 15);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap'
-    }).addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
 
-    const cards = document.querySelectorAll('.story-card');
-    const markers = [];
+  const categoryPoints = {
+    beliefs: [
+      [23.984396545409314, 120.55957403768117, "信仰與故事"],
+      [23.98756251199652, 120.5577258837089, "信仰與故事"],
+      [23.974853761810476, 120.56559629535225, "信仰與故事"],
+      [23.987936624836724, 120.55707128001008, "信仰與故事"]
+    ],
+    grape: [
+      [23.985737533116836, 120.55667866651686, "葡萄園景觀"],
+      [23.984885632162012, 120.55365999535238, "葡萄園景觀"],
+      [23.985678718912066, 120.55667866651686, "葡萄園景觀"],
+      [23.98640409222695, 120.55578817315883, "葡萄園景觀"],
+      [23.983315621971478, 120.55375008000988, "葡萄園景觀"],
+      [23.98090645809134, 120.55779548000973, "葡萄園景觀"]
+    ],
+    farm: [
+      [23.984396545409314, 120.55957403768117, "農遊體驗"]
+    ]
+  };
 
-    // 教學：這段會自動讀取每一張 story-card 的 data-lat 和 data-lng，並在地圖上建立標記。
-    cards.forEach((card) => {
-      const lat = parseFloat(card.dataset.lat);
-      const lng = parseFloat(card.dataset.lng);
-      const title = card.querySelector('h3').innerText;
-      const desc = card.querySelector('p').innerText;
+  let markers = [];
 
-      const marker = L.marker([lat, lng]).addTo(map).bindPopup(`<b>${title}</b><br>${desc}`);
+  function showCategory(category) {
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
+
+    const points = categoryPoints[category];
+    const bounds = [];
+
+    points.forEach(point => {
+      const marker = L.marker([point[0], point[1]])
+        .addTo(map)
+        .bindPopup(`<b>${point[2]}</b>`);
       markers.push(marker);
-
-      card.addEventListener('click', () => {
-        cards.forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-        map.flyTo([lat, lng], parseInt(card.dataset.zoom), {
-          duration: 1.2
-        });
-        marker.openPopup();
-      });
+      bounds.push([point[0], point[1]]);
     });
 
-    markers[0].openPopup();
-  </script>
+    map.fitBounds(bounds, {
+      padding: [50, 50],
+      maxZoom: 16
+    });
+  }
+
+  const cards = document.querySelectorAll('.story-card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      cards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      showCategory(card.dataset.category);
+    });
+  });
+
+  showCategory('beliefs');
+</script>
 </body>
 </html>
