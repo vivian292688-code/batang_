@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>擺渡時光｜塘藏故事</title>
 
-  <!-- Leaflet 地圖樣式 -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <style>
@@ -20,27 +19,8 @@
     }
 
     header {
-      background: linear-gradient(rgba(58, 45, 32, 0.45), rgba(58, 45, 32, 0.45)),
-        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80") center/cover;
-      color: white;
+      background: url("封面.jpg") center/cover no-repeat;
       min-height: 430px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    header h1 {
-      font-size: 46px;
-      margin: 0 0 12px;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      font-size: 20px;
-      margin: 0;
     }
 
     nav {
@@ -103,7 +83,6 @@
       font-weight: 700;
     }
 
-    /* StoryMap 區塊：左邊分類卡片，右邊地圖 */
     .storymap {
       display: grid;
       grid-template-columns: 1fr 1.35fr;
@@ -170,6 +149,29 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     }
 
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .product-card h3 {
+      color: #5b3f2f;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      color: #555;
+    }
+
     footer {
       background: #4a382d;
       color: white;
@@ -187,20 +189,22 @@
         top: 0;
         height: 420px;
       }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <header id="home">
-    <h1>擺渡時光｜塘藏故事</h1>
-    <p>慢遊擺塘，遇見葡萄、信仰與鄉村生活</p>
-    <a href="#attractions" class="button">開始探索 Explore</a>
-  </header>
+  <header id="home"></header>
 
   <nav>
     <a href="#about">關於擺塘 About</a>
     <a href="#attractions">景點導覽 Attractions</a>
+    <a href="#products">商品介紹 Products</a>
     <a href="#route">遊程推薦 Route</a>
     <a href="#contact">聯絡我們 Contact</a>
   </nav>
@@ -248,6 +252,38 @@
     </div>
   </section>
 
+  <section id="products">
+    <div class="section-title">
+      <h2>商品介紹｜Products</h2>
+      <p>擺塘村在地特色農產品與伴手禮</p>
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <span class="tag">Fresh Grapes</span>
+        <h3>新鮮葡萄</h3>
+        <p>擺塘村特色葡萄，新鮮現採，甜度高、風味佳，是地方代表性農產品。</p>
+        <a href="#" class="button">了解更多</a>
+      </div>
+
+      <div class="product-card">
+        <span class="tag">Processed Product</span>
+        <h3>葡萄加工品</h3>
+        <p>包含葡萄果醬、葡萄乾、葡萄汁等加工商品，延續葡萄產業價值。</p>
+        <a href="#" class="button">了解更多</a>
+      </div>
+
+      <div class="product-card">
+        <span class="tag">Local Gift</span>
+        <h3>地方伴手禮</h3>
+        <p>結合地方文化、農產特色與包裝設計，適合作為旅遊紀念與送禮選擇。</p>
+        <a href="#" class="button">了解更多</a>
+      </div>
+
+    </div>
+  </section>
+
   <section id="route">
     <div class="section-title">
       <h2>遊程推薦｜Travel Route</h2>
@@ -275,7 +311,6 @@
     <p>© 2026 擺塘村數位導覽平台 Batang Village Digital Guide</p>
   </footer>
 
-  <!-- Leaflet 地圖功能 -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script>
@@ -330,7 +365,7 @@
       });
     }
 
-    const cards = document.querySelectorAll('.story-card');
+    const cards = document.querySelectorAll('.story-card[data-category]');
 
     cards.forEach(card => {
       card.addEventListener('click', () => {
@@ -344,4 +379,5 @@
   </script>
 
 </body>
+</html>
 </html>
