@@ -72,6 +72,15 @@
       text-align: center;
     }
 
+    .about-img,
+    .route-img {
+      width: 100%;
+      margin-top: 28px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      display: block;
+    }
+
     .button {
       display: inline-block;
       margin-top: 22px;
@@ -149,29 +158,6 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .product-card {
-      background: white;
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    .product-card h3 {
-      color: #5b3f2f;
-      margin-bottom: 10px;
-    }
-
-    .product-card p {
-      color: #555;
-    }
-
     footer {
       background: #4a382d;
       color: white;
@@ -189,10 +175,6 @@
         top: 0;
         height: 420px;
       }
-
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -204,7 +186,7 @@
   <nav>
     <a href="#about">關於擺塘 About</a>
     <a href="#attractions">景點導覽 Attractions</a>
-    <a href="#products">商品介紹 Products</a>
+    <a href="products.html">商品介紹 Products</a>
     <a href="#route">遊程推薦 Route</a>
     <a href="#contact">聯絡我們 Contact</a>
   </nav>
@@ -214,8 +196,15 @@
       <h2>關於擺塘｜About Batang</h2>
       <p>地方故事、農村生活與文化記憶的匯集</p>
     </div>
+
     <div class="intro">
-      <p>擺塘村為一處融合農業特色、地方信仰與鄉村生活記憶的聚落。本網站以數位導覽方式整合在地景點、寺廟文化、農產特色與遊程資訊，讓居民與遊客能更深入認識地方故事，發現擺塘村的日常之美。</p>
+      <p>
+        擺塘村為一處融合農業特色、地方信仰與鄉村生活記憶的聚落。
+        本網站以數位導覽方式整合在地景點、寺廟文化、農產特色與遊程資訊，
+        讓居民與遊客能更深入認識地方故事，發現擺塘村的日常之美。
+      </p>
+
+      <img src="關於擺塘.jpg" alt="關於擺塘" class="about-img">
     </div>
   </section>
 
@@ -252,46 +241,21 @@
     </div>
   </section>
 
-  <section id="products">
-    <div class="section-title">
-      <h2>商品介紹｜Products</h2>
-      <p>擺塘村在地特色農產品與伴手禮</p>
-    </div>
-
-    <div class="product-grid">
-
-      <div class="product-card">
-        <span class="tag">Fresh Grapes</span>
-        <h3>新鮮葡萄</h3>
-        <p>擺塘村特色葡萄，新鮮現採，甜度高、風味佳，是地方代表性農產品。</p>
-        <a href="#" class="button">了解更多</a>
-      </div>
-
-      <div class="product-card">
-        <span class="tag">Processed Product</span>
-        <h3>葡萄加工品</h3>
-        <p>包含葡萄果醬、葡萄乾、葡萄汁等加工商品，延續葡萄產業價值。</p>
-        <a href="#" class="button">了解更多</a>
-      </div>
-
-      <div class="product-card">
-        <span class="tag">Local Gift</span>
-        <h3>地方伴手禮</h3>
-        <p>結合地方文化、農產特色與包裝設計，適合作為旅遊紀念與送禮選擇。</p>
-        <a href="#" class="button">了解更多</a>
-      </div>
-
-    </div>
-  </section>
-
   <section id="route">
     <div class="section-title">
       <h2>遊程推薦｜Travel Route</h2>
       <p>適合遊客與居民共同參與的慢遊路線</p>
     </div>
+
     <div class="route">
       <h3>半日遊 Half-Day Trip</h3>
-      <p>廟宇巡禮 → 葡萄園景觀 → 社區發展協會手作體驗 → 鄉村小徑散步</p>
+      <p>
+        廟宇巡禮 → 葡萄園景觀 →
+        社區發展協會手作體驗 →
+        鄉村小徑散步
+      </p>
+
+      <img src="半日.jpg" alt="半日遊行程介紹" class="route-img">
     </div>
   </section>
 
@@ -300,10 +264,20 @@
       <h2>聯絡我們｜Contact</h2>
       <p>歡迎認識擺塘村，探索更多地方故事</p>
     </div>
+
     <div class="intro">
-      <p>若有活動合作、導覽需求或地方資訊補充，歡迎與擺塘村社區發展協會聯繫。</p>
+      <p>
+        若有活動合作、導覽需求或地方資訊補充，
+        歡迎與擺塘村社區發展協會聯繫。
+      </p>
+
       <p>Phone：04-8526097</p>
-      <a class="button" href="https://maps.app.goo.gl/WFNc9L1HomHLRcth8" target="_blank">Google 地圖導航</a>
+
+      <a class="button"
+         href="https://maps.app.goo.gl/WFNc9L1HomHLRcth8"
+         target="_blank">
+         Google 地圖導航
+      </a>
     </div>
   </section>
 
@@ -314,30 +288,38 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script>
-    const map = L.map('map').setView([23.985472655233988, 120.55972260884549], 15);
+    const map = L.map('map').setView(
+      [23.985472655233988, 120.55972260884549],
+      15
+    );
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '© OpenStreetMap'
-    }).addTo(map);
+    L.tileLayer(
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+      }
+    ).addTo(map);
 
     const categoryPoints = {
       beliefs: [
-        [23.984396545409314, 120.55957403768117, "信仰與故事"],
-        [23.98756251199652, 120.5577258837089, "信仰與故事"],
-        [23.974853761810476, 120.56559629535225, "信仰與故事"],
-        [23.987936624836724, 120.55707128001008, "信仰與故事"]
+        [23.984396545409314,120.55957403768117,"信仰與故事"],
+        [23.98756251199652,120.5577258837089,"信仰與故事"],
+        [23.974853761810476,120.56559629535225,"信仰與故事"],
+        [23.987936624836724,120.55707128001008,"信仰與故事"]
       ],
+
       grape: [
-        [23.985737533116836, 120.55667866651686, "葡萄園景觀"],
-        [23.984885632162012, 120.55365999535238, "葡萄園景觀"],
-        [23.985678718912066, 120.55667866651686, "葡萄園景觀"],
-        [23.98640409222695, 120.55578817315883, "葡萄園景觀"],
-        [23.983315621971478, 120.55375008000988, "葡萄園景觀"],
-        [23.98090645809134, 120.55779548000973, "葡萄園景觀"]
+        [23.985737533116836,120.55667866651686,"葡萄園景觀"],
+        [23.984885632162012,120.55365999535238,"葡萄園景觀"],
+        [23.985678718912066,120.55667866651686,"葡萄園景觀"],
+        [23.98640409222695,120.55578817315883,"葡萄園景觀"],
+        [23.983315621971478,120.55375008000988,"葡萄園景觀"],
+        [23.98090645809134,120.55779548000973,"葡萄園景觀"]
       ],
+
       farm: [
-        [23.984396545409314, 120.55957403768117, "農遊體驗"]
+        [23.984396545409314,120.55957403768117,"農遊體驗"]
       ]
     };
 
