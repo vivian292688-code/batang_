@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>商品介紹｜擺渡時光・塘藏故事</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f6f6f4;
+      color: #222;
+      line-height: 1.8;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #6f4e37;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .hero {
+      padding: 80px 6vw 50px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+      background: white;
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      line-height: 1.2;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .hero p {
+      font-size: 24px;
+      color: #4b6b45;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 0;
+      display: block;
+    }
+
+    .product-section {
+      padding: 70px 6vw;
+    }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #fbfbf5;
+      margin-bottom: 50px;
+      min-height: 560px;
+      overflow: hidden;
+    }
+
+    .product-text {
+      padding: 70px 7vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-text h2 {
+      font-size: 64px;
+      line-height: 1.2;
+      margin: 0 0 80px;
+      font-weight: 500;
+    }
+
+    .product-text h3 {
+      font-size: 28px;
+      color: #4b174f;
+      font-weight: 500;
+      margin: 0 0 40px;
+    }
+
+    .product-text p {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .experience {
+      padding: 70px 6vw;
+      background: white;
+    }
+
+    .experience h2 {
+      font-size: 72px;
+      font-weight: 500;
+      margin: 0 0 40px;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .experience-item img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .experience-item h3 {
+      font-size: 32px;
+      font-weight: 500;
+      margin: 18px 0 0;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 80px 6vw;
+      background: #f4f4f4;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      font-size: 72px;
+      line-height: 1.1;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .contact p {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    footer {
+      background: #4a382d;
+      color: white;
+      text-align: center;
+      padding: 32px 20px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .product-card,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1,
+      .product-text h2,
+      .experience h2,
+      .contact h2 {
+        font-size: 44px;
+      }
+
+      .product-text {
+        padding: 40px 24px;
+      }
+
+      .product-text h2 {
+        margin-bottom: 40px;
+      }
+
+      .product-text h3,
+      .product-text p,
+      .hero p,
+      .contact p {
+        font-size: 20px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-item img {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">回首頁 Home</a>
+    <a href="#products">商品介紹 Products</a>
+    <a href="#experience">體驗項目 Experience</a>
+    <a href="#contact">聯絡我們 Contact</a>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>體驗商品<br>項目一覽</h1>
+      <p>體驗擺塘村特色活動手作、導覽與季節體驗，精選在地農產與特色商品</p>
+    </div>
+    <img src="2.jpg" alt="擺塘村商品封面">
+  </section>
+
+  <section id="products" class="product-section">
+
+    <div class="product-card">
+      <div class="product-text">
+        <h2>巨峰葡萄</h2>
+        <h3>大村之最，巨峰葡萄，擺塘的水果之光。</h3>
+        <p>
+          歷史悠久，民國五十四年由村民推廣種植，再慢慢推廣至全鄉及其他鄉鎮。
+          因此，擺塘可謂巨峰葡萄的故鄉，果肉 Q 彈，具有補血養生之功效。
+        </p>
+      </div>
+      <div class="product-image">
+        <img src="5.jpg" alt="巨峰葡萄">
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-text">
+        <h2>葡萄鳳梨酥</h2>
+        <h3>象徵中秋與新年的團圓文化。</h3>
+        <p>
+          為結合擺塘社區特色開發的創意糕點，特別將葡萄元素融入鳳梨酥之中，
+          形成具有地方風味的伴手禮商品。
+        </p>
+      </div>
+      <div class="product-image">
+        <img src="6.jpg" alt="葡萄鳳梨酥">
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-text">
+        <h2>葡萄蛋</h2>
+        <h3>擺塘特產中的最高機密。</h3>
+        <p>
+          將雞蛋以葡萄酒醃製，具有豐富的維他命 C，
+          口感香甜美味，是兼具特色與話題性的地方產品。
+        </p>
+      </div>
+      <div class="product-image">
+        <img src="7.jpg" alt="葡萄蛋">
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-text">
+        <h2>珍藏葡萄露</h2>
+        <h3>工法嚴謹繁瑣的珍品。</h3>
+        <p>
+          嚴選擺塘村內優質的巨峰葡萄，經過洗淨、風乾後放入容器，
+          再加入冰糖，歷經時間靜待，釀出芳香細緻的葡萄露。
+        </p>
+      </div>
+      <div class="product-image">
+        <img src="8.jpg" alt="珍藏葡萄露">
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-text">
+        <h2>葡萄手工皂</h2>
+        <h3>結合在地信仰與民俗草本。</h3>
+        <p>
+          以葡萄露為基底原料，並融合傳統民俗草本元素，
+          製成具有地方特色的手工皂，展現擺塘村的創意與生活文化。
+        </p>
+      </div>
+      <div class="product-image">
+        <img src="9.jpg" alt="葡萄手工皂">
+      </div>
+    </div>
+
+  </section>
+
+  <section id="experience" class="experience">
+    <h2>體驗項目</h2>
+
+    <div class="experience-grid">
+      <div class="experience-item">
+        <img src="10.jpg" alt="葡萄風味餐">
+        <h3>葡萄風味餐</h3>
+      </div>
+
+      <div class="experience-item">
+        <img src="11.jpg" alt="採果導覽體驗">
+        <h3>採果導覽體驗</h3>
+      </div>
+
+      <div class="experience-item">
+        <img src="12.jpg" alt="手作造型皂 DIY">
+        <h3>手作造型皂 DIY</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div>
+      <h2>聯絡我們｜<br>Contact</h2>
+    </div>
+
+    <div>
+      <p>515 彰化縣大村鄉擺塘村擺塘橫巷 1 號</p>
+      <p>Phone：04-8526097</p>
+      <p>若有活動合作、導覽需求或地方資訊補充，歡迎與擺塘村社區發展協會聯繫。</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 擺塘村數位導覽平台 Batang Village Digital Guide</p>
+  </footer>
+
+</body>
+</html>
