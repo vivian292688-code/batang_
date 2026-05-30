@@ -41,11 +41,57 @@
       padding: 30px 16px;
     }
 
-    .photo-page img {
+    .slider {
+      position: relative;
+      width: 100%;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      margin-bottom: 50px;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide img {
       width: 100%;
       height: auto;
       display: block;
-      margin-bottom: 28px;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(111, 78, 55, 0.85);
+      color: white;
+      border: none;
+      font-size: 28px;
+      padding: 12px 18px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .prev {
+      left: 16px;
+    }
+
+    .next {
+      right: 16px;
+    }
+
+    .slide-number {
+      text-align: center;
+      color: #5b3f2f;
+      font-weight: bold;
+      padding: 14px;
+      background: white;
     }
 
     .farm-links {
@@ -82,9 +128,12 @@
 
     .farm-card img {
       width: 100%;
-      height: auto;
+      height: 280px;
+      object-fit: contain;
+      background: white;
       display: block;
       margin: 0;
+      padding: 12px;
     }
 
     .farm-card h3 {
@@ -93,6 +142,13 @@
       font-size: 22px;
       padding: 18px;
       margin: 0;
+    }
+
+    .bottom-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 40px;
     }
 
     footer {
@@ -111,6 +167,11 @@
       .farm-links h2 {
         font-size: 26px;
       }
+
+      .slider-btn {
+        font-size: 22px;
+        padding: 8px 13px;
+      }
     }
   </style>
 </head>
@@ -123,15 +184,48 @@
 
   <main class="photo-page">
 
-    <img src="2.jpg" alt="商品介紹圖片 2">
-    <img src="5.jpg" alt="商品介紹圖片 5">
-    <img src="6.jpg" alt="商品介紹圖片 6">
-    <img src="7.jpg" alt="商品介紹圖片 7">
-    <img src="8.jpg" alt="商品介紹圖片 8">
-    <img src="9.jpg" alt="商品介紹圖片 9">
-    <img src="10.jpg" alt="商品介紹圖片 10">
-    <img src="11.jpg" alt="商品介紹圖片 11">
-    <img src="12.jpg" alt="商品介紹圖片 12">
+    <div class="slider">
+
+      <div class="slide active">
+        <img src="2.jpg" alt="商品介紹圖片 2">
+      </div>
+
+      <div class="slide">
+        <img src="5.jpg" alt="商品介紹圖片 5">
+      </div>
+
+      <div class="slide">
+        <img src="6.jpg" alt="商品介紹圖片 6">
+      </div>
+
+      <div class="slide">
+        <img src="7.jpg" alt="商品介紹圖片 7">
+      </div>
+
+      <div class="slide">
+        <img src="8.jpg" alt="商品介紹圖片 8">
+      </div>
+
+      <div class="slide">
+        <img src="9.jpg" alt="商品介紹圖片 9">
+      </div>
+
+      <div class="slide">
+        <img src="10.jpg" alt="商品介紹圖片 10">
+      </div>
+
+      <div class="slide">
+        <img src="11.jpg" alt="商品介紹圖片 11">
+      </div>
+
+      <button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
+      <button class="slider-btn next" onclick="changeSlide(1)">›</button>
+
+      <div class="slide-number">
+        <span id="current-slide">1</span> / 8
+      </div>
+
+    </div>
 
     <section class="farm-links">
 
@@ -144,7 +238,6 @@
            target="_blank">
 
           <img src="自然甜.jpg" alt="自然甜果園">
-
           <h3>自然甜果園</h3>
 
         </a>
@@ -154,7 +247,6 @@
            target="_blank">
 
           <img src="家和.jpg" alt="家和果園">
-
           <h3>家和果園</h3>
 
         </a>
@@ -164,7 +256,6 @@
            target="_blank">
 
           <img src="大新.jpg" alt="大新巨峰葡萄">
-
           <h3>大新巨峰葡萄</h3>
 
         </a>
@@ -174,7 +265,6 @@
            target="_blank">
 
           <img src="三色屋.jpg" alt="三色屋葡萄園">
-
           <h3>三色屋葡萄園</h3>
 
         </a>
@@ -183,11 +273,38 @@
 
     </section>
 
+    <img src="12.jpg" alt="商品介紹圖片 12" class="bottom-img">
+
   </main>
 
   <footer>
     <p>© 2026 擺塘村數位導覽平台 Batang Village Digital Guide</p>
   </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const currentSlideText = document.getElementById("current-slide");
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove("active"));
+
+      if (index >= slides.length) {
+        currentSlide = 0;
+      } else if (index < 0) {
+        currentSlide = slides.length - 1;
+      } else {
+        currentSlide = index;
+      }
+
+      slides[currentSlide].classList.add("active");
+      currentSlideText.textContent = currentSlide + 1;
+    }
+
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+  </script>
 
 </body>
 </html>
