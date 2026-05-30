@@ -34,11 +34,67 @@
       font-size: 15px;
     }
 
+    .page-hero {
+      background: linear-gradient(180deg, #fffaf2 0%, #f6f6f4 100%);
+      padding: 70px 20px 40px;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      margin: 0;
+      color: #5b3f2f;
+      font-size: 42px;
+      letter-spacing: 2px;
+    }
+
+    .page-hero p {
+      margin-top: 12px;
+      color: #777;
+      font-size: 17px;
+    }
+
+    .hero-line {
+      width: 80px;
+      height: 4px;
+      background: #8a5a44;
+      margin: 24px auto 0;
+      border-radius: 99px;
+    }
+
     .photo-page {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 30px 16px;
+    }
+
+    .brand-intro {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 50px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .brand-intro span {
+      color: #8a5a44;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
+
+    .brand-intro h2 {
+      color: #5b3f2f;
+      font-size: 30px;
+      margin: 14px 0;
+    }
+
+    .brand-intro p {
+      max-width: 800px;
+      margin: auto;
+      color: #666;
+      line-height: 1.9;
     }
 
     .slider {
@@ -103,7 +159,14 @@
       text-align: center;
       color: #5b3f2f;
       font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .farm-subtitle {
+      text-align: center;
+      color: #777;
       margin-bottom: 32px;
+      font-size: 15px;
     }
 
     .farm-grid {
@@ -160,6 +223,26 @@
     }
 
     @media (max-width: 768px) {
+      .page-hero {
+        padding: 50px 20px 28px;
+      }
+
+      .page-hero h1 {
+        font-size: 32px;
+      }
+
+      .page-hero p {
+        font-size: 15px;
+      }
+
+      .brand-intro {
+        padding: 28px 22px;
+      }
+
+      .brand-intro h2 {
+        font-size: 24px;
+      }
+
       .farm-grid {
         grid-template-columns: 1fr;
       }
@@ -179,10 +262,29 @@
 <body>
 
   <nav>
-    <a href="index.html">回首頁 Home</a>
+    <a href="index.html">← 回首頁 Home</a>
   </nav>
 
+  <header class="page-hero">
+    <h1>商品介紹｜Products</h1>
+    <p>精選擺塘村在地葡萄果園與特色農產，展現農村品牌與地方風味</p>
+    <div class="hero-line"></div>
+  </header>
+
   <main class="photo-page">
+
+    <section class="brand-intro">
+      <span>BATANG LOCAL PRODUCTS</span>
+
+      <h2>以葡萄串起地方農產與品牌故事</h2>
+
+      <p>
+        擺塘村以葡萄產業為地方特色，
+        結合在地果園、農產禮盒與地方品牌形象。
+        希望透過數位平台展示在地農產品，
+        讓更多人認識擺塘村豐富的農業文化與地方故事。
+      </p>
+    </section>
 
     <div class="slider">
 
@@ -229,7 +331,8 @@
 
     <section class="farm-links">
 
-      <h2>合作果園資訊</h2>
+      <h2>合作果園｜Partner Vineyards</h2>
+      <p class="farm-subtitle">點擊果園卡片，可前往官方網站或粉絲專頁了解更多資訊</p>
 
       <div class="farm-grid">
 
