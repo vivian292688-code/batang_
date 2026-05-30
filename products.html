@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>商品介紹｜擺渡時光・塘藏故事</title>
 
   <style>
@@ -40,11 +41,64 @@
       padding: 30px 16px;
     }
 
-    .photo-page img {
+    .photo-page > img {
       width: 100%;
       height: auto;
       display: block;
       margin-bottom: 28px;
+    }
+
+    .farm-links {
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+
+    .farm-links h2 {
+      text-align: center;
+      color: #5b3f2f;
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+
+    .farm-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .farm-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .farm-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .farm-card img {
+      width: 100%;
+      flex: 1;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      min-height: 0;
+    }
+
+    .farm-card h3 {
+      text-align: center;
+      color: #5b3f2f;
+      font-size: 22px;
+      padding: 16px;
+      margin: 0;
+      background: white;
     }
 
     footer {
@@ -53,6 +107,16 @@
       text-align: center;
       padding: 28px 20px;
       font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .farm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .farm-links h2 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
@@ -64,6 +128,7 @@
   </nav>
 
   <main class="photo-page">
+
     <img src="2.jpg" alt="商品介紹圖片 2">
     <img src="5.jpg" alt="商品介紹圖片 5">
     <img src="6.jpg" alt="商品介紹圖片 6">
@@ -73,6 +138,57 @@
     <img src="10.jpg" alt="商品介紹圖片 10">
     <img src="11.jpg" alt="商品介紹圖片 11">
     <img src="12.jpg" alt="商品介紹圖片 12">
+
+    <section class="farm-links">
+
+      <h2>合作果園資訊</h2>
+
+      <div class="farm-grid">
+
+        <a class="farm-card"
+           href="https://dacun-grape.com.tw/"
+           target="_blank">
+
+          <img src="自然甜.jpg" alt="自然甜果園">
+
+          <h3>自然甜果園</h3>
+
+        </a>
+
+        <a class="farm-card"
+           href="https://tw-grapefarm-chiahe.com/"
+           target="_blank">
+
+          <img src="家和.jpg" alt="家和果園">
+
+          <h3>家和果園</h3>
+
+        </a>
+
+        <a class="farm-card"
+           href="https://www.facebook.com/dahingrape/"
+           target="_blank">
+
+          <img src="大新.jpg" alt="大新巨峰葡萄">
+
+          <h3>大新巨峰葡萄</h3>
+
+        </a>
+
+        <a class="farm-card"
+           href="https://www.facebook.com/p/%E4%B8%89%E8%89%B2%E5%B1%8B%E8%91%A1%E8%90%84%E6%9E%9C%E5%9C%92-1000893597051/"
+           target="_blank">
+
+          <img src="三色屋.jpg" alt="三色屋葡萄園">
+
+          <h3>三色屋葡萄園</h3>
+
+        </a>
+
+      </div>
+
+    </section>
+
   </main>
 
   <footer>
