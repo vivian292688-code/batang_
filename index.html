@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>擺渡時光｜塘藏故事</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <style>
     * { box-sizing: border-box; }
@@ -101,20 +103,25 @@
       font-weight: 700;
     }
 
-    .storymap {
+    .category-block {
+      margin-bottom: 42px;
+    }
+
+    .category-title {
+      font-size: 24px;
+      color: #5b3f2f;
+      border-left: 6px solid #8a5a44;
+      padding-left: 14px;
+      margin-bottom: 20px;
+    }
+
+    .place-grid {
       display: grid;
-      grid-template-columns: 1fr 1.35fr;
-      gap: 24px;
-      align-items: start;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
-    .story-list {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .story-card {
+    .place-card {
       background: white;
       border-radius: 20px;
       padding: 22px;
@@ -124,19 +131,19 @@
       transition: 0.25s ease;
     }
 
-    .story-card:hover,
-    .story-card.active {
+    .place-card:hover {
       border-color: #8a5a44;
       transform: translateY(-3px);
     }
 
-    .story-card h3 {
+    .place-card h3 {
       margin: 6px 0 8px;
       color: #5b3f2f;
     }
 
-    .story-card p {
+    .place-card p {
       margin: 0;
+      color: #555;
     }
 
     .tag {
@@ -149,22 +156,27 @@
       margin-bottom: 10px;
     }
 
-    #map {
-      height: 620px;
-      border-radius: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-      position: sticky;
-      top: 72px;
-      overflow: hidden;
-    }
-
     .route {
       background: #fff;
       border-left: 6px solid #8a5a44;
       padding: 22px 26px;
       border-radius: 16px;
-      margin-bottom: 18px;
+      margin-bottom: 40px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .map-wrap {
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      margin-top: 40px;
+    }
+
+    #map {
+      height: 560px;
+      border-radius: 20px;
+      overflow: hidden;
     }
 
     footer {
@@ -175,17 +187,13 @@
     }
 
     @media (max-width: 850px) {
-      header {
-        height: 180px;
-      }
+      header { height: 180px; }
 
-      .storymap {
+      .place-grid {
         grid-template-columns: 1fr;
       }
 
       #map {
-        position: relative;
-        top: 0;
         height: 420px;
       }
     }
@@ -226,51 +234,95 @@
   <section id="attractions">
     <div class="section-title">
       <h2>景點導覽｜Attractions</h2>
-      <p>點擊左側分類卡片，右側地圖會一次顯示該分類所有地標</p>
+      <p>點擊景點卡片可直接開啟 Google MAP，下方同步顯示景點位置地圖。</p>
     </div>
 
-    <div class="storymap">
-      <div class="story-list">
+    <div class="category-block">
+      <h3 class="category-title">寺廟｜Temples</h3>
 
-        <div class="story-card active" data-category="beliefs">
-          <span class="tag">Beliefs & Stories</span>
-          <h3>信仰與故事｜Beliefs & Stories</h3>
-          <p>廟埕、香火與節慶，陪伴著居民走過農忙歲月，也保存著地方最真實的人情與故事。</p>
+      <div class="place-grid">
+        <div class="place-card" onclick="openMap(23.984396545409314,120.55957403768117)">
+          <span class="tag">寺廟信仰</span>
+          <h3>和興宮</h3>
+          <p>擺塘村重要的地方信仰據點，承載居民共同記憶與聚落情感。</p>
         </div>
 
-        <div class="story-card" data-category="grape">
-          <span class="tag">Rural Landscape</span>
-          <h3>葡萄園景觀｜Grape Vineyard</h3>
-          <p>走進葡萄園與田園小徑，感受擺塘村農業景觀與鄉村日常風貌。</p>
+        <div class="place-card" onclick="openMap(23.98756251199652,120.5577258837089)">
+          <span class="tag">寺廟信仰</span>
+          <h3>福天宮</h3>
+          <p>以宗教文化與地方故事為特色，展現村落生活中的信仰力量。</p>
         </div>
 
-        <div class="story-card" data-category="farm">
-          <span class="tag">Farm Experience</span>
-          <h3>農遊體驗｜Farm Experience</h3>
-          <p>結合葡萄產業、農產品特產與地方體驗活動，讓遊客認識農村產業文化。</p>
+        <div class="place-card" onclick="openMap(23.974853761810476,120.56559629535225)">
+          <span class="tag">寺廟信仰</span>
+          <h3>慈祥寺</h3>
+          <p>為擺塘村重要宗教信仰據點，承載地方居民生活記憶與傳統文化。</p>
         </div>
 
+        <div class="place-card" onclick="openMap(23.987936624836724,120.55707128001008)">
+          <span class="tag">寺廟信仰</span>
+          <h3>慈聖宮</h3>
+          <p>結合地方信仰與聚落文化，為村內重要的祭祀與交流空間。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-block">
+      <h3 class="category-title">果園｜Orchards</h3>
+
+      <div class="place-grid">
+        <div class="place-card" onclick="openMap(23.985737533116836,120.55667866651686)">
+          <span class="tag">葡萄園</span>
+          <h3>家和果園</h3>
+          <p>可感受擺塘村葡萄產業與農村田園景色。</p>
+        </div>
+
+        <div class="place-card" onclick="openMap(23.984885632162012,120.55365999535238)">
+          <span class="tag">葡萄園</span>
+          <h3>自然甜果園</h3>
+          <p>展現村內農業生產地景，適合作為慢遊導覽節點。</p>
+        </div>
+
+        <div class="place-card" onclick="openMap(23.98640409222695,120.55578817315883)">
+          <span class="tag">葡萄園</span>
+          <h3>阿敦果園</h3>
+          <p>串聯田園小徑與農村生活，呈現地方產業特色。</p>
+        </div>
+
+        <div class="place-card" onclick="openMap(23.983315621971478,120.55375008000988)">
+          <span class="tag">葡萄園</span>
+          <h3>樂農果園</h3>
+          <p>可欣賞完整葡萄園聚落與農村景色。</p>
+        </div>
+
+        <div class="place-card" onclick="openMap(23.98090645809134,120.55779548000973)">
+          <span class="tag">葡萄園</span>
+          <h3>三色屋果園</h3>
+          <p>適合散步與拍照，感受擺塘村自然農村風貌。</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="route">
+      <div class="section-title">
+        <h2>遊程推薦｜Travel Route</h2>
+        <p>適合遊客與居民共同參與的慢遊路線</p>
       </div>
 
+      <div class="route">
+        <h3>半日遊 Half-Day Trip</h3>
+        <p>
+          廟宇巡禮 → 葡萄園景觀 →
+          社區發展協會手作體驗 →
+          鄉村小徑散步
+        </p>
+
+        <img src="半日.jpg" alt="半日遊行程介紹" class="route-img">
+      </div>
+    </div>
+
+    <div class="map-wrap">
       <div id="map"></div>
-    </div>
-  </section>
-
-  <section id="route">
-    <div class="section-title">
-      <h2>遊程推薦｜Travel Route</h2>
-      <p>適合遊客與居民共同參與的慢遊路線</p>
-    </div>
-
-    <div class="route">
-      <h3>半日遊 Half-Day Trip</h3>
-      <p>
-        廟宇巡禮 → 葡萄園景觀 →
-        社區發展協會手作體驗 →
-        鄉村小徑散步
-      </p>
-
-      <img src="半日.jpg" alt="半日遊行程介紹" class="route-img">
     </div>
   </section>
 
@@ -303,6 +355,13 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script>
+    function openMap(lat, lng) {
+      window.open(
+        `https://www.google.com/maps?q=${lat},${lng}`,
+        '_blank'
+      );
+    }
+
     const map = L.map('map').setView(
       [23.985472655233988, 120.55972260884549],
       15
@@ -311,68 +370,33 @@
     L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
-        maxZoom: 19,
         attribution: '© OpenStreetMap'
       }
     ).addTo(map);
 
-    const categoryPoints = {
-      beliefs: [
-        [23.984396545409314,120.55957403768117,"信仰與故事"],
-        [23.98756251199652,120.5577258837089,"信仰與故事"],
-        [23.974853761810476,120.56559629535225,"信仰與故事"],
-        [23.987936624836724,120.55707128001008,"信仰與故事"]
-      ],
+    const locations = [
+      ["和興宮", 23.984396545409314, 120.55957403768117],
+      ["福天宮", 23.98756251199652, 120.5577258837089],
+      ["慈祥寺", 23.974853761810476, 120.56559629535225],
+      ["慈聖宮", 23.987936624836724, 120.55707128001008],
+      ["家和果園", 23.985737533116836, 120.55667866651686],
+      ["自然甜果園", 23.984885632162012, 120.55365999535238],
+      ["阿敦果園", 23.98640409222695, 120.55578817315883],
+      ["樂農果園", 23.983315621971478, 120.55375008000988],
+      ["三色屋果園", 23.98090645809134, 120.55779548000973]
+    ];
 
-      grape: [
-        [23.985737533116836,120.55667866651686,"葡萄園景觀"],
-        [23.984885632162012,120.55365999535238,"葡萄園景觀"],
-        [23.985678718912066,120.55667866651686,"葡萄園景觀"],
-        [23.98640409222695,120.55578817315883,"葡萄園景觀"],
-        [23.983315621971478,120.55375008000988,"葡萄園景觀"],
-        [23.98090645809134,120.55779548000973,"葡萄園景觀"]
-      ],
-
-      farm: [
-        [23.984396545409314,120.55957403768117,"農遊體驗"]
-      ]
-    };
-
-    let markers = [];
-
-    function showCategory(category) {
-      markers.forEach(marker => map.removeLayer(marker));
-      markers = [];
-
-      const points = categoryPoints[category];
-      const bounds = [];
-
-      points.forEach(point => {
-        const marker = L.marker([point[0], point[1]])
-          .addTo(map)
-          .bindPopup(`<b>${point[2]}</b>`);
-
-        markers.push(marker);
-        bounds.push([point[0], point[1]]);
-      });
-
-      map.fitBounds(bounds, {
-        padding: [50, 50],
-        maxZoom: 16
-      });
-    }
-
-    const cards = document.querySelectorAll('.story-card[data-category]');
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        cards.forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
-        showCategory(card.dataset.category);
-      });
+    locations.forEach(location => {
+      L.marker([location[1], location[2]])
+        .addTo(map)
+        .bindPopup(`
+          <b>${location[0]}</b><br>
+          <a href="https://www.google.com/maps?q=${location[1]},${location[2]}"
+             target="_blank">
+             開啟 Google MAP
+          </a>
+        `);
     });
-
-    showCategory('beliefs');
   </script>
 
 </body>
