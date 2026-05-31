@@ -38,19 +38,44 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: #6f4e37;
+      background: rgba(111,78,55,0.95);
+      backdrop-filter: blur(8px);
       display: flex;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
-      padding: 12px;
-      gap: 16px;
+      gap: 50px;
+      padding: 22px 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
     }
 
     nav a {
-      color: white;
+      color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: 2px;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 3px;
+      background: #f4d58d;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #f4d58d;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     section {
@@ -194,7 +219,19 @@
     }
 
     @media (max-width: 850px) {
-      header { height: 180px; }
+      header {
+        height: 180px;
+      }
+
+      nav {
+        gap: 18px;
+        padding: 16px 12px;
+      }
+
+      nav a {
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
 
       .place-grid {
         grid-template-columns: 1fr;
@@ -324,7 +361,7 @@
       <div class="line-card">
         <h3>LINE 官方帳號｜Digital Service</h3>
         <p>
-          掃描 QR Code 即可進入擺塘村 LINE 官方帳號，查看活動預約、商品資訊、與常見問題。
+          掃描 QR Code 即可進入擺塘村 LINE 官方帳號，查看活動預約、商品資訊、地圖位置與常見問題。
         </p>
 
         <img src="LINE.jpg" alt="LINE官方帳號介紹" class="line-img">
@@ -347,7 +384,7 @@
         若有活動合作、導覽需求或地方資訊補充，
         歡迎與擺塘村社區發展協會聯繫。
       </p>
-   <p>地址:彰化縣大村鄉擺塘村擺塘橫巷1號</p>
+
       <p>Phone：04-8526097</p>
 
       <a class="button"
