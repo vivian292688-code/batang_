@@ -156,16 +156,40 @@
     .place-card {
       background: white;
       border-radius: 20px;
-      padding: 22px;
+      padding: 20px;
       box-shadow: 0 8px 22px rgba(0,0,0,0.08);
       cursor: pointer;
       border: 2px solid transparent;
       transition: 0.25s ease;
+
+      display: flex;
+      align-items: center;
+      gap: 18px;
     }
 
     .place-card:hover {
       border-color: #8a5a44;
       transform: translateY(-3px);
+    }
+
+    .place-card:hover .place-photo {
+      transform: scale(1.06);
+    }
+
+    .place-photo {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 4px solid #efe2cf;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      transition: 0.25s ease;
+      background: #f3eee7;
+    }
+
+    .place-content {
+      flex: 1;
     }
 
     .place-card h3 {
@@ -269,8 +293,23 @@
       }
 
       .place-card {
-        padding: 20px;
+        padding: 18px;
         border-radius: 18px;
+        gap: 14px;
+      }
+
+      .place-photo {
+        width: 76px;
+        height: 76px;
+        border-width: 3px;
+      }
+
+      .place-card h3 {
+        font-size: 18px;
+      }
+
+      .place-card p {
+        font-size: 14px;
       }
 
       .category-title {
@@ -338,29 +377,47 @@
       <h3 class="category-title">寺廟｜Temples</h3>
 
       <div class="place-grid">
+
         <div class="place-card" onclick="openMap(23.984396545409314,120.55957403768117)">
-          <span class="tag">寺廟信仰</span>
-          <h3>慈祥寺</h3>
-          <p>擺塘村重要的地方信仰據點，承載居民共同記憶與聚落情感。</p>
+          <img src="慈祥寺.jpg" alt="慈祥寺" class="place-photo">
+
+          <div class="place-content">
+            <span class="tag">寺廟信仰</span>
+            <h3>慈祥寺</h3>
+            <p>擺塘村重要的地方信仰據點，承載居民共同記憶與聚落情感。</p>
+          </div>
         </div>
 
         <div class="place-card" onclick="openMap(23.98756251199652,120.5577258837089)">
-          <span class="tag">寺廟信仰</span>
-          <h3>慈聖宮</h3>
-          <p>以宗教文化與地方故事為特色，展現村落生活中的信仰力量。</p>
+          <img src="慈聖宮.jpg" alt="慈聖宮" class="place-photo">
+
+          <div class="place-content">
+            <span class="tag">寺廟信仰</span>
+            <h3>慈聖宮</h3>
+            <p>以宗教文化與地方故事為特色，展現村落生活中的信仰力量。</p>
+          </div>
         </div>
 
         <div class="place-card" onclick="openMap(23.974853761810476,120.56559629535225)">
-          <span class="tag">寺廟信仰</span>
-          <h3>福天宮</h3>
-          <p>為擺塘村重要宗教信仰據點，承載地方居民生活記憶與傳統文化。</p>
+          <img src="福天宮.jpg" alt="福天宮" class="place-photo">
+
+          <div class="place-content">
+            <span class="tag">寺廟信仰</span>
+            <h3>福天宮</h3>
+            <p>為擺塘村重要宗教信仰據點，承載地方居民生活記憶與傳統文化。</p>
+          </div>
         </div>
 
         <div class="place-card" onclick="openMap(23.987936624836724,120.55707128001008)">
-          <span class="tag">寺廟信仰</span>
-          <h3>和興宮</h3>
-          <p>結合地方信仰與聚落文化，為村內重要的祭祀與交流空間。</p>
+          <img src="和興宮.jpg" alt="和興宮" class="place-photo">
+
+          <div class="place-content">
+            <span class="tag">寺廟信仰</span>
+            <h3>和興宮</h3>
+            <p>結合地方信仰與聚落文化，為村內重要的祭祀與交流空間。</p>
+          </div>
         </div>
+
       </div>
     </div>
 
@@ -368,29 +425,47 @@
       <h3 class="category-title">果園｜Orchards</h3>
 
       <div class="place-grid">
+
         <div class="place-card" onclick="openMap(23.985737533116836,120.55667866651686)">
-          <span class="tag">葡萄園</span>
-          <h3>家和果園</h3>
-          <p>可感受擺塘村葡萄產業與農村田園景色。</p>
+          <img src="家和果園.jpg" alt="家和果園" class="place-photo">
+
+          <div class="place-content">
+            <span class="tag">葡萄園</span>
+            <h3>家和果園</h3>
+            <p>可感受擺塘村葡萄產業與農村田園景色。</p>
+          </div>
         </div>
 
         <div class="place-card" onclick="openMap(23.984885632162012,120.55365999535238)">
-          <span class="tag">葡萄園</span>
-          <h3>自然甜果園</h3>
-          <p>展現村內農業生產地景，適合作為慢遊導覽節點。</p>
+          <img src="自然甜果園.jpg" alt="自然甜果園" class="place-photo">
+
+          <div class="place-content">
+            <span class="tag">葡萄園</span>
+            <h3>自然甜果園</h3>
+            <p>展現村內農業生產地景，適合作為慢遊導覽節點。</p>
+          </div>
         </div>
 
         <div class="place-card" onclick="openMap(23.98231143911705,120.55744882603757)">
-          <span class="tag">葡萄園</span>
-          <h3>大新果園</h3>
-          <p>以巨峰葡萄為特色，展現擺塘村葡萄產業與在地農業風貌。</p>
+          <img src="大新果園.jpg" alt="大新果園" class="place-photo">
+
+          <div class="place-content">
+            <span class="tag">葡萄園</span>
+            <h3>大新果園</h3>
+            <p>以巨峰葡萄為特色，展現擺塘村葡萄產業與在地農業風貌。</p>
+          </div>
         </div>
 
         <div class="place-card" onclick="openMap(23.98090645809134,120.55779548000973)">
-          <span class="tag">葡萄園</span>
-          <h3>三色屋果園</h3>
-          <p>適合散步與拍照，感受擺塘村自然農村風貌。</p>
+          <img src="三色屋果園.jpg" alt="三色屋果園" class="place-photo">
+
+          <div class="place-content">
+            <span class="tag">葡萄園</span>
+            <h3>三色屋果園</h3>
+            <p>適合散步與拍照，感受擺塘村自然農村風貌。</p>
+          </div>
         </div>
+
       </div>
     </div>
 
